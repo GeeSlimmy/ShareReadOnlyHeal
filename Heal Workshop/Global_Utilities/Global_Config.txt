@@ -1,0 +1,22 @@
+*** Variables ***
+# TEST RUNTIME VARIABLES
+${heal_global_login_profile}    patch    # here we pass one variable 'default' in this case to control lots of variables with _default at the end.
+${heal_global_login_browser}    ${heal_global_login_browser_${heal_global_login_profile}}
+${heal_global_login_remoteurl}    ${heal_global_login_remoteurl_${heal_global_login_profile}}
+${heal_global_login_desiredcaps}    ${heal_global_login_desiredcaps_${heal_global_login_profile}}
+${heal_global_login_url}    ${heal_global_login_url_${heal_global_login_profile}}
+# Safari - Default Test Browser
+${heal_global_login_browser_patch}    safari
+${heal_global_login_remoteurl_patch}    http://GaryEFung:2046e733-dc84-48bc-9722-c8f6fd4a2827@ondemand.saucelabs.com:80/wd/hub
+${heal_global_login_desiredcaps_patch}    platform:OS X 10.9,browserName:safari,name:OS X 10.9 Test,tag:Safari Browser OS X 10.9
+${heal_global_login_url_patch}    https://patient.heal.com/register
+# WINDOWS 7 - Internet Explorer 11
+${heal_global_login_browser_win7ie11}    internet explorer
+${heal_global_login_remoteurl_win7ie11}    http://GaryEFung:2046e733-dc84-48bc-9722-c8f6fd4a2827@ondemand.saucelabs.com:80/wd/hub
+${heal_global_login_desiredcaps_win7ie11}    platform:Windows 7,browserName:internet explorer,platformVersion:11.0,name:Windows 7 IE11 Test,tag:IE11 Browser Windows 7
+${heal_global_login_url_win7ie11}    https://patient.heal.com/register
+# MAC OS X 10.8 Mountain Lion - Chrome 46.0
+${heal_global_login_browser_maclionChrome}    Chrome
+${heal_global_login_remoteurl_maclionChrome}    http://GaryEFung:2046e733-dc84-48bc-9722-c8f6fd4a2827@ondemand.saucelabs.com:80/wd/hub
+${heal_global_login_desiredcaps_maclionChrome}    platform:OS X 10.8,browserName:Chrome,platformVersion:46.0,name:MAC OS X 10.8 Mountain Lion Test,tag:MAC OS X 10.8 Mountain Lion
+${heal_global_login_url_maclionChrome}    https://patient.heal.com/register

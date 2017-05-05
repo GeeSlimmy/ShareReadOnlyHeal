@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170501 00:36:50.585" generator="Robot 3.0 (Python 2.7.12 on win32)">
+<suite source="C:\Users\gfung\.jenkins\workspace\Heal Workshop" id="s1" name="Heal Workshop">
+<suite source="C:\Users\gfung\.jenkins\workspace\Heal Workshop\Heal_Workshop.robot" id="s1-s1" name="Heal Workshop">
+<kw type="setup" name="Global Suite Set up" library="Global_Keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${heal_global_login_url}</arg>
+<arg>${heal_global_login_browser}</arg>
+<arg>None</arg>
+<arg>${heal_global_login_remoteurl}</arg>
+<arg>${heal_global_login_desiredcaps}</arg>
+</arguments>
+<msg timestamp="20170501 00:36:52.461" level="INFO">Opening browser 'Chrome' to base url 'https://patient.heal.com/register' through remote server at 'http://GaryEFung:2046e733-dc84-48bc-9722-c8f6fd4a2827@ondemand.saucelabs.com:80/wd/hub'</msg>
+<status status="PASS" endtime="20170501 00:37:07.389" starttime="20170501 00:36:52.459"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170501 00:37:07.688" starttime="20170501 00:37:07.390"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:07.689" starttime="20170501 00:36:52.458"></status>
+</kw>
+<test id="s1-s1-t1" name="New_User_Forgets_To_Type_In_Required_Fields">
+<kw name="New_User_Clicks_On_Create_New_Account" library="Heal_Business_Level_Readable_Keywords">
+<doc>URL and Text to be verified are required for this keyword.</doc>
+<arguments>
+<arg>${heal_register.page_loaded_text}</arg>
+</arguments>
+<kw name="Verify Page Loaded" library="Heal_Keywords">
+<doc>Verify that the page loaded completely.</doc>
+<arguments>
+<arg>${Verify_Page_Load_Text}</arg>
+</arguments>
+<kw name="Utility Page Should Contain" library="Utilities">
+<arguments>
+<arg>${Verify_Text_On_Page_Load}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20170501 00:37:08.339" starttime="20170501 00:37:07.693"></status>
+</kw>
+<kw name="Utility Set Message" library="Utilities">
+<arguments>
+<arg>The text ${text} appears fine on the page.</arg>
+<arg>yes</arg>
+</arguments>
+<kw name="Set Test Message" library="BuiltIn">
+<doc>Sets message for the current test case.</doc>
+<arguments>
+<arg>${testMsg}</arg>
+<arg>${append}</arg>
+</arguments>
+<msg timestamp="20170501 00:37:08.343" level="INFO">Set test message to:
+The text Call Heal 1-844-644-4325 (HEAL) or email support@heal appears fine on the page.</msg>
+<status status="PASS" endtime="20170501 00:37:08.343" starttime="20170501 00:37:08.342"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:08.344" starttime="20170501 00:37:08.341"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:08.345" starttime="20170501 00:37:07.693"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:08.345" starttime="20170501 00:37:07.691"></status>
+</kw>
+<kw name="Verify Page Url" library="Heal_Keywords">
+<doc>Verify that current page URL matches the expected URL.</doc>
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains `expected`.</doc>
+<arguments>
+<arg>${heal_register.page_url}</arg>
+</arguments>
+<msg timestamp="20170501 00:37:09.675" level="INFO">Current location contains 'https://patient.heal.com/register'.</msg>
+<status status="PASS" endtime="20170501 00:37:09.676" starttime="20170501 00:37:08.347"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:09.677" starttime="20170501 00:37:08.346"></status>
+</kw>
+<kw name="Click Create Account Button" library="Heal_Keywords">
+<doc>Click on Create Account Button.</doc>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${heal_register.create_account}</arg>
+</arguments>
+<msg timestamp="20170501 00:37:09.679" level="INFO">Clicking button 'css=button.md-accent.md-raised.hue-2.md-button.md-ink-ripple'.</msg>
+<status status="PASS" endtime="20170501 00:37:11.828" starttime="20170501 00:37:09.679"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:11.830" starttime="20170501 00:37:09.678"></status>
+</kw>
+<kw name="Verify Page Error Validation" library="Heal_Keywords">
+<kw name="Utility Element Should Contain" library="Utilities">
+<arguments>
+<arg>${heal_register.error_validation}</arg>
+<arg>First Name Is Required</arg>
+</arguments>
+<kw name="Element Should Contain" library="Selenium2Library">
+<doc>Verifies element identified by `locator` contains text `expected`.</doc>
+<arguments>
+<arg>${text_locator}</arg>
+<arg>${expected_text}</arg>
+<arg>The text appears fine.</arg>
+</arguments>
+<msg timestamp="20170501 00:37:11.837" level="INFO">Verifying element 'xpath=//*[contains(text(),'First Name Is Required')]' contains text 'First Name Is Required'.</msg>
+<status status="PASS" endtime="20170501 00:37:12.651" starttime="20170501 00:37:11.834"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:12.653" starttime="20170501 00:37:11.832"></status>
+</kw>
+<kw name="Utility Set Message" library="Utilities">
+<arguments>
+<arg>The error validation First Name Is Required appears on the page.</arg>
+<arg>yes</arg>
+</arguments>
+<kw name="Set Test Message" library="BuiltIn">
+<doc>Sets message for the current test case.</doc>
+<arguments>
+<arg>${testMsg}</arg>
+<arg>${append}</arg>
+</arguments>
+<msg timestamp="20170501 00:37:12.656" level="INFO">Set test message to:
+The text Call Heal 1-844-644-4325 (HEAL) or email support@heal appears fine on the page. The error validation First Name Is Required appears on the page.</msg>
+<status status="PASS" endtime="20170501 00:37:12.656" starttime="20170501 00:37:12.654"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:12.657" starttime="20170501 00:37:12.653"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:12.657" starttime="20170501 00:37:11.831"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:12.658" starttime="20170501 00:37:07.690"></status>
+</kw>
+<tags>
+<tag>NEGATIVETEST</tag>
+</tags>
+<status status="PASS" endtime="20170501 00:37:12.659" critical="yes" starttime="20170501 00:37:07.689">The text Call Heal 1-844-644-4325 (HEAL) or email support@heal appears fine on the page. The error validation First Name Is Required appears on the page.</status>
+</test>
+<test id="s1-s1-t2" name="New_User_Tries_Clicking_On_Login_Button">
+<kw name="New_User_Clicks_On_Login_Button" library="Heal_Business_Level_Readable_Keywords">
+<kw name="Click Already Have An Account Log In Link" library="Heal_Keywords">
+<doc>Click on Already Have An Account Log In Link.</doc>
+<arguments>
+<arg>The Login page has loaded.</arg>
+</arguments>
+<kw name="Click Link" library="Selenium2Library">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>${heal_register.already_have_an_account_log_in}</arg>
+</arguments>
+<msg timestamp="20170501 00:37:12.665" level="INFO">Clicking link 'css=a.blue-text.md-button.md-ink-ripple'.</msg>
+<status status="PASS" endtime="20170501 00:37:13.887" starttime="20170501 00:37:12.664"></status>
+</kw>
+<kw name="Utility Set Message" library="Utilities">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>yes</arg>
+</arguments>
+<kw name="Set Test Message" library="BuiltIn">
+<doc>Sets message for the current test case.</doc>
+<arguments>
+<arg>${testMsg}</arg>
+<arg>${append}</arg>
+</arguments>
+<msg timestamp="20170501 00:37:13.891" level="INFO">Set test message to:
+The Login page has loaded.</msg>
+<status status="PASS" endtime="20170501 00:37:13.893" starttime="20170501 00:37:13.890"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:13.893" starttime="20170501 00:37:13.888"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:13.894" starttime="20170501 00:37:12.663"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:13.894" starttime="20170501 00:37:12.662"></status>
+</kw>
+<tags>
+<tag>POSITIVETEST</tag>
+</tags>
+<status status="PASS" endtime="20170501 00:37:13.895" critical="yes" starttime="20170501 00:37:12.660">The Login page has loaded.</status>
+</test>
+<kw type="teardown" name="Global Suite Tear Down" library="Global_Keywords">
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20170501 00:37:14.328" starttime="20170501 00:37:13.897"></status>
+</kw>
+<status status="PASS" endtime="20170501 00:37:14.328" starttime="20170501 00:37:13.896"></status>
+</kw>
+<doc>*== TEST  FOCUS ==*
+
+Go to patient.heal.com/register and  come up with a small demo of test framework you would use to automate  and upload it in git and send us the link . The home work will be evaluated on the following
+
+- How easy to set up and run your code ? Clarity of instruction
+- How portable your code is?
+-How easy it is to scale and add test or maintain ?
+- How easy to understand the flow by a manual QA or product person?
+
+Bonus point :
+
+If you can integrate with a cloud service like sauelabs
+If you can find and report bug on any our platform in a clear , precise bug report
+API automation or test casing sample ( you can proxy and look at the calls)
+
+== TEST INSTRUCTIONS ==
+
+You can run this test with pybot module by passing the arguments in the Run tab of RIDE IDE or CMD using pybot or using Pycharm IDE running pybot with desired arguments below.
+
+-d TestResults -i POSITIVETEST
+-d TestResults -i NEGITIVETEST
+
+
+== BUG REPORT ==
+
+The letter "i" is appearing as capital for the word "is" on all the error valiations.
+
+Login to patient.head.com/register
+Click on the Create New Account button.
+Observe the error messages and the word "Is" with captial "I".
+
+Expected Result: The word "Is" should have a lower case "i"
+Actual Result: The word "Is" shows with a capital "I" for all error message here.</doc>
+<status status="PASS" endtime="20170501 00:37:14.329" starttime="20170501 00:36:50.837"></status>
+</suite>
+<status status="PASS" endtime="20170501 00:37:14.334" starttime="20170501 00:36:50.706"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">NEGATIVETEST</stat>
+<stat fail="0" pass="1">POSITIVETEST</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Heal Workshop" pass="2">Heal Workshop</stat>
+<stat fail="0" id="s1-s1" name="Heal Workshop" pass="2">Heal Workshop.Heal Workshop</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
